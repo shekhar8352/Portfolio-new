@@ -29,7 +29,7 @@ const projectsData = [
     description: "Portfolio developed using react (NextJS)",
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/shekhar8352/Portfolio-new",
     previewUrl: "/",
   },
   {
