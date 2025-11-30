@@ -1,99 +1,109 @@
 "use client";
 import React, { useState, useRef } from "react";
-import ProjectCard from "./ProjectCard";
-import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
+import { CodeBracketIcon, EyeIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const projectsData = [
   {
     id: 0,
     title: "PostEaze",
-    description: "Social media management platform with AI-driven content optimization (Golang, PostgreSQL, Redis, React)",
-    image: "/images/projects/posteaze.png",
+    description: "Social media management platform enabling businesses to integrate and manage multiple social channels from a unified dashboard",
+    tech: ["Golang", "PostgreSQL", "Redis", "React", "Mantine UI", "Docker"],
     tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/PostEaze",
     previewUrl: "https://github.com/shekhar8352/PostEaze",
+    highlights: ["AI-driven content optimization", "Multi-platform scheduling", "Analytics & reporting"],
   },
   {
     id: 1,
     title: "PostCard",
-    description: "Social media web app with communities, real-time notifications, and 99 Lighthouse score (Next.js, MongoDB, TypeScript)",
-    image: "/images/projects/1.png",
+    description: "Social media web app with topic-based communities, real-time notifications, and 99 Lighthouse score",
+    tech: ["Next.js", "MongoDB", "TypeScript", "Tailwind CSS", "Clerk"],
     tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/PostCard",
     previewUrl: "https://post-card-xuog.vercel.app/",
+    highlights: ["Community-based access control", "Real-time notifications", "25+ active users"],
   },
   {
     id: 2,
     title: "ShareMe",
-    description: "An image sharing social media platform (ReactJS, Sanity.io)",
-    image: "/images/projects/2.png",
+    description: "Image sharing social media platform with pin-style content organization",
+    tech: ["React.js", "Sanity.io", "Tailwind CSS"],
     tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/ShareMe",
     previewUrl: "https://shareme8352.netlify.app/",
+    highlights: ["Google OAuth", "Image upload & sharing", "Category-based browsing"],
   },
   {
     id: 3,
     title: "NextJS Portfolio",
-    description: "Portfolio developed using react (NextJS)",
-    image: "/images/projects/3.png",
+    description: "Modern portfolio website with dark theme and smooth animations",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
     tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/Portfolio-new",
     previewUrl: "/",
+    highlights: ["Responsive design", "Email integration", "SEO optimized"],
   },
   {
     id: 4,
-    title: "Movie-Carusel",
-    description: "Movie recommendation website (React)",
-    image: "/images/projects/4.png",
+    title: "Movie Carousel",
+    description: "Movie recommendation website with TMDB API integration",
+    tech: ["React", "TMDB API", "CSS"],
     tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/Movie-Carousel",
-    previewUrl: "/",
+    previewUrl: "#",
+    highlights: ["Movie search", "Trending movies", "Detailed info cards"],
   },
   {
     id: 5,
     title: "Emojipedia",
-    description: "Encyclopedia of emijis (React)",
-    image: "/images/projects/5.png",
+    description: "Encyclopedia of emojis with search and categorization",
+    tech: ["React", "JavaScript"],
     tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/EmojiPedia",
-    previewUrl: "/",
+    previewUrl: "#",
+    highlights: ["Emoji database", "Search functionality", "Clean UI"],
   },
   {
     id: 6,
-    title: "Keeper",
-    description: "Clone of Google keep (ReactJS)",
-    image: "/images/projects/6.png",
+    title: "Keeper App",
+    description: "Note-taking app inspired by Google Keep",
+    tech: ["React", "JavaScript", "CSS"],
     tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/Keeper-App",
-    previewUrl: "/",
+    previewUrl: "#",
+    highlights: ["Add/delete notes", "Persistent storage", "Minimalist design"],
   },
   {
     id: 7,
-    title: "Leetcode",
-    description: "my leetcode profile (knight)",
-    image: "/images/projects/7.jpg",
+    title: "LeetCode",
+    description: "Knight badge • Top 5.2% • Contest Rating: 1867",
+    tech: ["Python", "C++", "Algorithms", "Data Structures"],
     tag: ["All", "Platform"],
-    gitUrl: "/",
+    gitUrl: "#",
     previewUrl: "https://leetcode.com/sudhanshu_8352/",
+    highlights: ["1000+ problems solved", "Knight badge", "Contest rating 1867"],
   },
   {
     id: 8,
     title: "Codeforces",
-    description: "My codeforces profile (specialist)",
-    image: "/images/projects/8.png",
+    description: "Specialist badge • Max Rating: 1440",
+    tech: ["C++", "Algorithms", "Competitive Programming"],
     tag: ["All", "Platform"],
-    gitUrl: "/",
+    gitUrl: "#",
     previewUrl: "https://codeforces.com/profile/shekharsudhanshu8352",
+    highlights: ["Specialist badge", "Max rating 1440", "Regular contests"],
   },
   {
     id: 9,
-    title: "Codechef",
-    description: "My codechef profile (4 star)",
-    image: "/images/projects/9.jpg",
+    title: "CodeChef",
+    description: "4 Star coder with consistent performance",
+    tech: ["C++", "Python", "Problem Solving"],
     tag: ["All", "Platform"],
-    gitUrl: "/",
+    gitUrl: "#",
     previewUrl: "https://www.codechef.com/users/sudhanshu8352",
+    highlights: ["4 star rating", "Long challenges", "Cook-offs"],
   },
 ];
 
@@ -124,43 +134,113 @@ const ProjectsSection = () => {
         <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">
           Showcasing full-stack applications and competitive programming achievements
         </p>
-        <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-          <ProjectTag
-            onClick={handleTagChange}
-            name="All"
-            isSelected={tag === "All"}
-          />
-          <ProjectTag
-            onClick={handleTagChange}
-            name="Web"
-            isSelected={tag === "Web"}
-          />
-          <ProjectTag
-            onClick={handleTagChange}
-            name="Platform"
-            isSelected={tag === "Mobile"}
-          />
+
+        <div className="flex flex-wrap justify-center items-center gap-3 mb-12">
+          <button
+            onClick={() => handleTagChange("All")}
+            className={`px-6 py-2.5 rounded-full border-2 text-sm font-semibold transition-all duration-300 hover:scale-105 ${tag === "All"
+                ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 border-transparent shadow-lg shadow-blue-500/30"
+                : "text-gray-400 border-slate-600 hover:border-blue-500 hover:text-white bg-slate-800/30"
+              }`}
+          >
+            All
+          </button>
+          <button
+            onClick={() => handleTagChange("Web")}
+            className={`px-6 py-2.5 rounded-full border-2 text-sm font-semibold transition-all duration-300 hover:scale-105 ${tag === "Web"
+                ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 border-transparent shadow-lg shadow-blue-500/30"
+                : "text-gray-400 border-slate-600 hover:border-blue-500 hover:text-white bg-slate-800/30"
+              }`}
+          >
+            Web Projects
+          </button>
+          <button
+            onClick={() => handleTagChange("Platform")}
+            className={`px-6 py-2.5 rounded-full border-2 text-sm font-semibold transition-all duration-300 hover:scale-105 ${tag === "Platform"
+                ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 border-transparent shadow-lg shadow-blue-500/30"
+                : "text-gray-400 border-slate-600 hover:border-blue-500 hover:text-white bg-slate-800/30"
+              }`}
+          >
+            Coding Platforms
+          </button>
         </div>
-        <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+
+        <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
-            <motion.li
-              key={index}
+            <motion.div
+              key={project.id}
               variants={cardVariants}
               initial="initial"
               animate={isInView ? "animate" : "initial"}
-              transition={{ duration: 0.3, delay: index * 0.4 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              className="group relative"
             >
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                imgUrl={project.image}
-                gitUrl={project.gitUrl}
-                previewUrl={project.previewUrl}
-              />
-            </motion.li>
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+
+              {/* Card */}
+              <div className="relative h-full bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl p-6 hover:border-blue-500/50 transition-all duration-300 flex flex-col">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="flex gap-2">
+                    {project.gitUrl !== "#" && (
+                      <Link
+                        href={project.gitUrl}
+                        target="_blank"
+                        className="w-8 h-8 rounded-lg bg-slate-700/50 border border-blue-500/30 hover:border-blue-400 hover:bg-blue-500/20 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                      >
+                        <CodeBracketIcon className="w-5 h-5 text-blue-400" />
+                      </Link>
+                    )}
+                    {project.previewUrl !== "#" && (
+                      <Link
+                        href={project.previewUrl}
+                        target="_blank"
+                        className="w-8 h-8 rounded-lg bg-slate-700/50 border border-cyan-500/30 hover:border-cyan-400 hover:bg-cyan-500/20 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                      >
+                        <ArrowTopRightOnSquareIcon className="w-5 h-5 text-cyan-400" />
+                      </Link>
+                    )}
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+                  {project.description}
+                </p>
+
+                {/* Highlights */}
+                {project.highlights && (
+                  <ul className="space-y-1 mb-4">
+                    {project.highlights.map((highlight, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-gray-400 text-xs">
+                        <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700/50">
+                  {project.tech.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2 py-1 bg-slate-700/50 text-blue-300 rounded text-xs font-mono"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

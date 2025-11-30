@@ -145,26 +145,26 @@ const AboutSection = () => {
 
   return (
     <section className="text-white py-16" id="about">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <h2 className="text-center text-4xl font-bold mb-12">
           <span className="text-gradient">About Me</span>
         </h2>
 
-        <div className="md:grid md:grid-cols-2 gap-12 items-start">
-          <div className="relative group">
+        <div className="md:grid md:grid-cols-2 gap-12 items-center">
+          <div className="relative group mb-8 md:mb-0">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
             <div className="relative">
               <Image
                 src="/images/about-image.png"
                 width={500}
                 height={500}
-                alt="About"
-                className="rounded-2xl border-2 border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.2)]"
+                alt="About Sudhanshu"
+                className="rounded-2xl border-2 border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.2)] w-full h-auto"
               />
             </div>
           </div>
 
-          <div className="mt-8 md:mt-0">
+          <div>
             <p className="text-gray-300 text-base lg:text-lg leading-relaxed mb-6">
               I am a <span className="text-blue-400 font-semibold">Senior Engineer</span> at Marsh McLennan with expertise in <span className="text-cyan-400">full-stack development</span> and <span className="text-cyan-400">AI-powered solutions</span>.
               I specialize in building scalable applications using React, FastAPI, Django, and Golang.
