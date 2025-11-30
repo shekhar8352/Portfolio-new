@@ -1,7 +1,7 @@
 "use client";
 import React, { useTransition, useState } from "react";
-import Image from "next/image";
 import TabButton from "./TabButton";
+import { motion } from "framer-motion";
 
 const TAB_DATA = [
   {
@@ -146,38 +146,113 @@ const AboutSection = () => {
   return (
     <section className="text-white py-16" id="about">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-4xl font-bold mb-12">
-          <span className="text-gradient">About Me</span>
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-center text-4xl font-bold mb-4">
+            <span className="text-gradient">About Me</span>
+          </h2>
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+            Full-stack engineer passionate about building scalable solutions
+          </p>
+        </motion.div>
 
-        <div className="md:grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative group mb-8 md:mb-0">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-            <div className="relative">
-              <Image
-                src="/images/about-image.png"
-                width={500}
-                height={500}
-                alt="About Sudhanshu"
-                className="rounded-2xl border-2 border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.2)] w-full h-auto"
-              />
-            </div>
+        <div className="max-w-5xl mx-auto">
+          {/* Introduction Cards */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
+              <div className="relative tech-card text-center p-6">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Senior Engineer</h3>
+                <p className="text-gray-400 text-sm">Marsh McLennan</p>
+                <p className="text-blue-400 text-xs mt-1">May 2025 - Present</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
+              <div className="relative tech-card text-center p-6">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">AI Engineer</h3>
+                <p className="text-gray-400 text-sm">RAG & LangChain</p>
+                <p className="text-purple-400 text-xs mt-1">30% faster responses</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
+              <div className="relative tech-card text-center p-6">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Competitive Coder</h3>
+                <p className="text-gray-400 text-sm">LeetCode Knight</p>
+                <p className="text-yellow-400 text-xs mt-1">Top 5.2% • 1867 rating</p>
+              </div>
+            </motion.div>
           </div>
 
-          <div>
-            <p className="text-gray-300 text-base lg:text-lg leading-relaxed mb-6">
+          {/* Main Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="tech-card p-8 mb-8"
+          >
+            <p className="text-gray-300 text-lg leading-relaxed mb-4">
               I am a <span className="text-blue-400 font-semibold">Senior Engineer</span> at Marsh McLennan with expertise in <span className="text-cyan-400">full-stack development</span> and <span className="text-cyan-400">AI-powered solutions</span>.
-              I specialize in building scalable applications using React, FastAPI, Django, and Golang.
+              I specialize in building scalable applications using <code>React</code>, <code>FastAPI</code>, <code>Django</code>, and <code>Golang</code>.
             </p>
-            <p className="text-gray-300 text-base lg:text-lg leading-relaxed mb-6">
+            <p className="text-gray-300 text-lg leading-relaxed mb-4">
               My experience includes developing <code>RAG algorithms</code>, <code>LangChain agents</code>, microservices architecture, and enterprise-level platforms.
               Previously at Chat360, I engineered AI chatbots, voice bots, and marketing automation systems serving <span className="text-green-400 font-semibold">100,000+ daily users</span>.
             </p>
-            <p className="text-gray-300 text-base lg:text-lg leading-relaxed mb-8">
+            <p className="text-gray-300 text-lg leading-relaxed">
               I'm passionate about competitive programming with a <span className="text-yellow-400 font-semibold">LeetCode Knight</span> title (top 5.2%) and <span className="text-yellow-400 font-semibold">Codeforces Specialist</span> rating.
             </p>
+          </motion.div>
 
-            <div className="flex flex-wrap gap-3 mb-8">
+          {/* Tabs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <div className="flex flex-wrap gap-3 mb-8 justify-center">
               {TAB_DATA.map((item) => (
                 <TabButton
                   key={item.id}
@@ -192,7 +267,7 @@ const AboutSection = () => {
             <div className="min-h-[300px]">
               {TAB_DATA.find((t) => t.id === tab).content}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { CodeBracketIcon, EyeIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import { CodeBracketIcon, ArrowTopRightOnSquareIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 const projectsData = [
@@ -107,18 +107,35 @@ const projectsData = [
   },
 ];
 
+const ITEMS_PER_PAGE = 3;
+
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   const handleTagChange = (newTag) => {
     setTag(newTag);
+    setCurrentPage(1); // Reset to first page when filter changes
   };
 
   const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
   );
+
+  const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const currentProjects = filteredProjects.slice(startIndex, endIndex);
+
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1));
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  };
 
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
@@ -143,7 +160,7 @@ const ProjectsSection = () => {
                 : "text-gray-400 border-slate-600 hover:border-blue-500 hover:text-white bg-slate-800/30"
               }`}
           >
-            All
+            All ({projectsData.length})
           </button>
           <button
             onClick={() => handleTagChange("Web")}
@@ -152,7 +169,7 @@ const ProjectsSection = () => {
                 : "text-gray-400 border-slate-600 hover:border-blue-500 hover:text-white bg-slate-800/30"
               }`}
           >
-            Web Projects
+            Web Projects ({projectsData.filter(p => p.tag.includes("Web")).length})
           </button>
           <button
             onClick={() => handleTagChange("Platform")}
@@ -161,12 +178,12 @@ const ProjectsSection = () => {
                 : "text-gray-400 border-slate-600 hover:border-blue-500 hover:text-white bg-slate-800/30"
               }`}
           >
-            Coding Platforms
+            Coding Platforms ({projectsData.filter(p => p.tag.includes("Platform")).length})
           </button>
         </div>
 
-        <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
+        <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {currentProjects.map((project, index) => (
             <motion.div
               key={project.id}
               variants={cardVariants}
@@ -241,6 +258,55 @@ const ProjectsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-4">
+            <button
+              onClick={handlePrevPage}
+              disabled={currentPage === 1}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${currentPage === 1
+                  ? "bg-slate-800/30 text-gray-600 cursor-not-allowed"
+                  : "bg-slate-800/50 text-white hover:bg-blue-500/20 hover:border-blue-500/50 border border-slate-700/50"
+                }`}
+            >
+              <ChevronLeftIcon className="w-5 h-5" />
+              Previous
+            </button>
+
+            <div className="flex items-center gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`w-10 h-10 rounded-lg font-semibold transition-all duration-300 ${currentPage === page
+                      ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/30"
+                      : "bg-slate-800/50 text-gray-400 hover:text-white hover:bg-slate-700/50 border border-slate-700/50"
+                    }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={handleNextPage}
+              disabled={currentPage === totalPages}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${currentPage === totalPages
+                  ? "bg-slate-800/30 text-gray-600 cursor-not-allowed"
+                  : "bg-slate-800/50 text-white hover:bg-blue-500/20 hover:border-blue-500/50 border border-slate-700/50"
+                }`}
+            >
+              Next
+              <ChevronRightIcon className="w-5 h-5" />
+            </button>
+          </div>
+        )}
+
+        {/* Results info */}
+        <p className="text-center text-gray-500 text-sm mt-6">
+          Showing {startIndex + 1}-{Math.min(endIndex, filteredProjects.length)} of {filteredProjects.length} {tag !== "All" ? tag.toLowerCase() : ""} projects
+        </p>
       </div>
     </section>
   );
