@@ -21,7 +21,7 @@ const experienceData = [
         id: 2,
         company: "Chat360",
         role: "Software Engineer",
-        duration: "June 2024 - Ongoing",
+        duration: "June 2024 - April 2025",
         location: "Pune, Maharashtra",
         color: "from-purple-500 to-pink-500",
         highlights: [
