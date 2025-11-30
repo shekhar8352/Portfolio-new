@@ -6,9 +6,18 @@ import { motion, useInView } from "framer-motion";
 
 const projectsData = [
   {
+    id: 0,
+    title: "PostEaze",
+    description: "Social media management platform with AI-driven content optimization (Golang, PostgreSQL, Redis, React)",
+    image: "/images/projects/posteaze.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/shekhar8352/PostEaze",
+    previewUrl: "https://github.com/shekhar8352/PostEaze",
+  },
+  {
     id: 1,
     title: "PostCard",
-    description: "A threads clone web app (NextJS, MongoSB)",
+    description: "Social media web app with communities, real-time notifications, and 99 Lighthouse score (Next.js, MongoDB, TypeScript)",
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/PostCard",
@@ -109,7 +118,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        My Projects/ Coding Platforms
+        Projects & Coding Platforms
       </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag

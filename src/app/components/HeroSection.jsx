@@ -24,11 +24,13 @@ const HeroSection = () => {
               sequence={[
                 "Sudhanshu",
                 1000,
-                "Web Developer",
+                "Senior Engineer",
+                1000,
+                "Full Stack Developer",
+                1000,
+                "AI Engineer",
                 1000,
                 "Competitive Programmer",
-                1000,
-                "UI/UX Designer",
                 1000,
               ]}
               wrapper="span"
@@ -37,7 +39,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            I am currently a final year student in Indian Institute of Information Technology, Surat
+            Senior Engineer at Marsh McLennan | Full Stack Developer specializing in React, FastAPI, and AI-powered solutions
           </p>
           <div>
             <Link

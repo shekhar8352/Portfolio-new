@@ -8,16 +8,47 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-      <li>React</li>
-      <li>NextJS</li>
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>MongoDB</li>
-        {/* <li>Sequelize</li> */}
-        <li>JavaScript/typescript</li>
-        
-      </ul>
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <h4 className="font-semibold text-yellow-500 mb-2">Languages</h4>
+          <ul className="list-disc pl-2">
+            <li>Python</li>
+            <li>JavaScript/TypeScript</li>
+            <li>Golang</li>
+            <li>SQL</li>
+            <li>C/C++</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-yellow-500 mb-2">Backend</h4>
+          <ul className="list-disc pl-2">
+            <li>Node.js/Express.js</li>
+            <li>FastAPI</li>
+            <li>Django</li>
+            <li>PostgreSQL/MongoDB</li>
+            <li>Redis</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-yellow-500 mb-2">Frontend</h4>
+          <ul className="list-disc pl-2">
+            <li>React.js</li>
+            <li>Next.js</li>
+            <li>Angular.js</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-yellow-500 mb-2">DevOps & AI</h4>
+          <ul className="list-disc pl-2">
+            <li>Docker/AWS</li>
+            <li>Nginx/Caddy</li>
+            <li>LangChain/Pinecone</li>
+            <li>OpenAI/RAG</li>
+            <li>RabbitMQ/Kafka</li>
+          </ul>
+        </div>
+      </div>
     ),
   },
   {
@@ -25,8 +56,9 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Indian institute of Information Technology, Surat (8.46)</li>
-        <li>Lal Bahadur Senior Secondary School, Kota (94.6%)</li>
+        <li>Indian Institute of Information Technology, Surat</li>
+        <li>B.Tech in Electronics and Communication (2020-2024)</li>
+        <li>CGPA: 8.54/10.00</li>
       </ul>
     ),
   },
@@ -59,12 +91,13 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            I am a Senior Engineer at Marsh McLennan with expertise in full-stack development
+            and AI-powered solutions. I specialize in building scalable applications using
+            React, FastAPI, Django, and Golang. My experience includes developing RAG algorithms,
+            LangChain agents, microservices architecture, and enterprise-level platforms.
+            Previously at Chat360, I engineered AI chatbots, voice bots, and marketing automation
+            systems serving 100,000+ daily users. I'm passionate about competitive programming
+            with a LeetCode Knight title (top 5.2%) and Codeforces Specialist rating.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
