@@ -241,7 +241,7 @@ const AboutSection = () => {
               Previously at Chat360, I engineered AI chatbots, voice bots, and marketing automation systems serving <span className="text-green-400 font-semibold">100,000+ daily users</span>.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed">
-              I'm passionate about competitive programming with a <span className="text-yellow-400 font-semibold">LeetCode Knight</span> title (top 5.2%) and <span className="text-yellow-400 font-semibold">Codeforces Specialist</span> rating.
+              I&apos;m passionate about competitive programming with a <span className="text-yellow-400 font-semibold">LeetCode Knight</span> title (top 5.2%) and <span className="text-yellow-400 font-semibold">Codeforces Specialist</span> rating.
             </p>
           </motion.div>
 

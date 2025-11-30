@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const GitHubStats = () => {
     const username = "shekhar8352";
@@ -35,10 +36,13 @@ const GitHubStats = () => {
                         <div className="group relative">
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
                             <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl p-4 hover:border-blue-500/50 transition-all duration-300 overflow-hidden">
-                                <img
+                                <Image
                                     src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=radical&hide_border=true&bg_color=00000000&title_color=3b82f6&icon_color=06b6d4&text_color=e5e7eb&ring_color=3b82f6`}
                                     alt="GitHub Stats"
+                                    width={495}
+                                    height={195}
                                     className="w-full h-auto"
+                                    unoptimized
                                 />
                             </div>
                         </div>
@@ -47,10 +51,13 @@ const GitHubStats = () => {
                         <div className="group relative">
                             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
                             <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300 overflow-hidden">
-                                <img
+                                <Image
                                     src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=radical&hide_border=true&bg_color=00000000&title_color=8b5cf6&text_color=e5e7eb`}
                                     alt="Top Languages"
+                                    width={495}
+                                    height={195}
                                     className="w-full h-auto"
+                                    unoptimized
                                 />
                             </div>
                         </div>
@@ -66,10 +73,13 @@ const GitHubStats = () => {
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
                         <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl p-4 hover:border-green-500/50 transition-all duration-300 overflow-hidden">
-                            <img
+                            <Image
                                 src={`https://github-readme-streak-stats.herokuapp.com/?user=${username}&theme=radical&hide_border=true&background=00000000&ring=3b82f6&fire=06b6d4&currStreakLabel=e5e7eb&sideLabels=e5e7eb&currStreakNum=3b82f6&sideNums=06b6d4`}
                                 alt="GitHub Streak"
+                                width={800}
+                                height={220}
                                 className="w-full h-auto"
+                                unoptimized
                             />
                         </div>
                     </motion.div>
@@ -91,10 +101,13 @@ const GitHubStats = () => {
                                 Contribution Calendar
                             </h3>
                             <div className="overflow-x-auto">
-                                <img
+                                <Image
                                     src={`https://ghchart.rshah.org/3b82f6/${username}`}
                                     alt="GitHub Contribution Graph"
+                                    width={800}
+                                    height={150}
                                     className="w-full h-auto min-w-[600px]"
+                                    unoptimized
                                 />
                             </div>
                         </div>
