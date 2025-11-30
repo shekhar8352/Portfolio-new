@@ -24,7 +24,7 @@ const HeroSection = () => {
             <span className="text-gradient">
               Hello, I&apos;m{" "}
             </span>
-            <br></br>
+            <br />
             <TypeAnimation
               sequence={[
                 "Sudhanshu",
