@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import AchievementsSection from "./components/AchievementsSection";
 import ExperienceSection from "./components/ExperienceSection";
 import GitHubStats from "./components/GitHubStats";
+import CodingPlatforms from "./components/CodingPlatforms";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <ExperienceSection />
         <GitHubStats />
         <ProjectsSection />
+        <CodingPlatforms />
         <EmailSection />
       </div>
       <Footer />

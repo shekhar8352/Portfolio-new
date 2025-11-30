@@ -10,7 +10,6 @@ const projectsData = [
     title: "PostEaze",
     description: "Social media management platform enabling businesses to integrate and manage multiple social channels from a unified dashboard",
     tech: ["Golang", "PostgreSQL", "Redis", "React", "Mantine UI", "Docker"],
-    tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/PostEaze",
     previewUrl: "https://github.com/shekhar8352/PostEaze",
     highlights: ["AI-driven content optimization", "Multi-platform scheduling", "Analytics & reporting"],
@@ -20,7 +19,6 @@ const projectsData = [
     title: "PostCard",
     description: "Social media web app with topic-based communities, real-time notifications, and 99 Lighthouse score",
     tech: ["Next.js", "MongoDB", "TypeScript", "Tailwind CSS", "Clerk"],
-    tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/PostCard",
     previewUrl: "https://post-card-xuog.vercel.app/",
     highlights: ["Community-based access control", "Real-time notifications", "25+ active users"],
@@ -30,7 +28,6 @@ const projectsData = [
     title: "ShareMe",
     description: "Image sharing social media platform with pin-style content organization",
     tech: ["React.js", "Sanity.io", "Tailwind CSS"],
-    tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/ShareMe",
     previewUrl: "https://shareme8352.netlify.app/",
     highlights: ["Google OAuth", "Image upload & sharing", "Category-based browsing"],
@@ -40,7 +37,6 @@ const projectsData = [
     title: "NextJS Portfolio",
     description: "Modern portfolio website with dark theme and smooth animations",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/Portfolio-new",
     previewUrl: "/",
     highlights: ["Responsive design", "Email integration", "SEO optimized"],
@@ -50,7 +46,6 @@ const projectsData = [
     title: "Movie Carousel",
     description: "Movie recommendation website with TMDB API integration",
     tech: ["React", "TMDB API", "CSS"],
-    tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/Movie-Carousel",
     previewUrl: "#",
     highlights: ["Movie search", "Trending movies", "Detailed info cards"],
@@ -60,7 +55,6 @@ const projectsData = [
     title: "Emojipedia",
     description: "Encyclopedia of emojis with search and categorization",
     tech: ["React", "JavaScript"],
-    tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/EmojiPedia",
     previewUrl: "#",
     highlights: ["Emoji database", "Search functionality", "Clean UI"],
@@ -70,64 +64,23 @@ const projectsData = [
     title: "Keeper App",
     description: "Note-taking app inspired by Google Keep",
     tech: ["React", "JavaScript", "CSS"],
-    tag: ["All", "Web"],
     gitUrl: "https://github.com/shekhar8352/Keeper-App",
     previewUrl: "#",
     highlights: ["Add/delete notes", "Persistent storage", "Minimalist design"],
-  },
-  {
-    id: 7,
-    title: "LeetCode",
-    description: "Knight badge • Top 5.2% • Contest Rating: 1867",
-    tech: ["Python", "C++", "Algorithms", "Data Structures"],
-    tag: ["All", "Platform"],
-    gitUrl: "#",
-    previewUrl: "https://leetcode.com/sudhanshu_8352/",
-    highlights: ["1000+ problems solved", "Knight badge", "Contest rating 1867"],
-  },
-  {
-    id: 8,
-    title: "Codeforces",
-    description: "Specialist badge • Max Rating: 1440",
-    tech: ["C++", "Algorithms", "Competitive Programming"],
-    tag: ["All", "Platform"],
-    gitUrl: "#",
-    previewUrl: "https://codeforces.com/profile/shekharsudhanshu8352",
-    highlights: ["Specialist badge", "Max rating 1440", "Regular contests"],
-  },
-  {
-    id: 9,
-    title: "CodeChef",
-    description: "4 Star coder with consistent performance",
-    tech: ["C++", "Python", "Problem Solving"],
-    tag: ["All", "Platform"],
-    gitUrl: "#",
-    previewUrl: "https://www.codechef.com/users/sudhanshu8352",
-    highlights: ["4 star rating", "Long challenges", "Cook-offs"],
   },
 ];
 
 const ITEMS_PER_PAGE = 3;
 
 const ProjectsSection = () => {
-  const [tag, setTag] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const handleTagChange = (newTag) => {
-    setTag(newTag);
-    setCurrentPage(1); // Reset to first page when filter changes
-  };
-
-  const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
-  );
-
-  const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(projectsData.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentProjects = filteredProjects.slice(startIndex, endIndex);
+  const currentProjects = projectsData.slice(startIndex, endIndex);
 
   const handlePrevPage = () => {
     setCurrentPage((prev) => Math.max(prev - 1, 1));
@@ -146,41 +99,11 @@ const ProjectsSection = () => {
     <section id="projects" className="py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-center text-4xl font-bold text-white mb-4">
-          <span className="text-gradient">Projects & Coding Platforms</span>
+          <span className="text-gradient">Projects</span>
         </h2>
-        <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">
-          Showcasing full-stack applications and competitive programming achievements
+        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          Full-stack web applications and personal projects
         </p>
-
-        <div className="flex flex-wrap justify-center items-center gap-3 mb-12">
-          <button
-            onClick={() => handleTagChange("All")}
-            className={`px-6 py-2.5 rounded-full border-2 text-sm font-semibold transition-all duration-300 hover:scale-105 ${tag === "All"
-                ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 border-transparent shadow-lg shadow-blue-500/30"
-                : "text-gray-400 border-slate-600 hover:border-blue-500 hover:text-white bg-slate-800/30"
-              }`}
-          >
-            All ({projectsData.length})
-          </button>
-          <button
-            onClick={() => handleTagChange("Web")}
-            className={`px-6 py-2.5 rounded-full border-2 text-sm font-semibold transition-all duration-300 hover:scale-105 ${tag === "Web"
-                ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 border-transparent shadow-lg shadow-blue-500/30"
-                : "text-gray-400 border-slate-600 hover:border-blue-500 hover:text-white bg-slate-800/30"
-              }`}
-          >
-            Web Projects ({projectsData.filter(p => p.tag.includes("Web")).length})
-          </button>
-          <button
-            onClick={() => handleTagChange("Platform")}
-            className={`px-6 py-2.5 rounded-full border-2 text-sm font-semibold transition-all duration-300 hover:scale-105 ${tag === "Platform"
-                ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 border-transparent shadow-lg shadow-blue-500/30"
-                : "text-gray-400 border-slate-600 hover:border-blue-500 hover:text-white bg-slate-800/30"
-              }`}
-          >
-            Coding Platforms ({projectsData.filter(p => p.tag.includes("Platform")).length})
-          </button>
-        </div>
 
         <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {currentProjects.map((project, index) => (
@@ -305,7 +228,7 @@ const ProjectsSection = () => {
 
         {/* Results info */}
         <p className="text-center text-gray-500 text-sm mt-6">
-          Showing {startIndex + 1}-{Math.min(endIndex, filteredProjects.length)} of {filteredProjects.length} {tag !== "All" ? tag.toLowerCase() : ""} projects
+          Showing {startIndex + 1}-{Math.min(endIndex, projectsData.length)} of {projectsData.length} projects
         </p>
       </div>
     </section>
