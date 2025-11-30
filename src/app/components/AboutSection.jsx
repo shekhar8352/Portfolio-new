@@ -8,45 +8,77 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <h4 className="font-semibold text-yellow-500 mb-2">Languages</h4>
-          <ul className="list-disc pl-2">
-            <li>Python</li>
-            <li>JavaScript/TypeScript</li>
-            <li>Golang</li>
-            <li>SQL</li>
-            <li>C/C++</li>
-          </ul>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="tech-card group">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h4 className="font-semibold text-blue-400 text-lg">Languages</h4>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {["Python", "JavaScript", "TypeScript", "Golang", "SQL", "C/C++"].map((skill) => (
+              <span key={skill} className="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-md text-sm font-mono hover:bg-slate-600/50 transition-colors">
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
-        <div>
-          <h4 className="font-semibold text-yellow-500 mb-2">Backend</h4>
-          <ul className="list-disc pl-2">
-            <li>Node.js/Express.js</li>
-            <li>FastAPI</li>
-            <li>Django</li>
-            <li>PostgreSQL/MongoDB</li>
-            <li>Redis</li>
-          </ul>
+
+        <div className="tech-card group">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              </svg>
+            </div>
+            <h4 className="font-semibold text-green-400 text-lg">Backend</h4>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {["Node.js", "Express.js", "FastAPI", "Django", "PostgreSQL", "MongoDB", "Redis"].map((skill) => (
+              <span key={skill} className="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-md text-sm font-mono hover:bg-slate-600/50 transition-colors">
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
-        <div>
-          <h4 className="font-semibold text-yellow-500 mb-2">Frontend</h4>
-          <ul className="list-disc pl-2">
-            <li>React.js</li>
-            <li>Next.js</li>
-            <li>Angular.js</li>
-            <li>Tailwind CSS</li>
-          </ul>
+
+        <div className="tech-card group">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+            </div>
+            <h4 className="font-semibold text-purple-400 text-lg">Frontend</h4>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {["React.js", "Next.js", "Angular.js", "Tailwind CSS"].map((skill) => (
+              <span key={skill} className="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-md text-sm font-mono hover:bg-slate-600/50 transition-colors">
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
-        <div>
-          <h4 className="font-semibold text-yellow-500 mb-2">DevOps & AI</h4>
-          <ul className="list-disc pl-2">
-            <li>Docker/AWS</li>
-            <li>Nginx/Caddy</li>
-            <li>LangChain/Pinecone</li>
-            <li>OpenAI/RAG</li>
-            <li>RabbitMQ/Kafka</li>
-          </ul>
+
+        <div className="tech-card group">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h4 className="font-semibold text-orange-400 text-lg">DevOps & AI</h4>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {["Docker", "AWS", "Nginx", "Caddy", "LangChain", "Pinecone", "OpenAI", "RAG", "RabbitMQ", "Kafka"].map((skill) => (
+              <span key={skill} className="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-md text-sm font-mono hover:bg-slate-600/50 transition-colors">
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     ),
@@ -55,21 +87,48 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Indian Institute of Information Technology, Surat</li>
-        <li>B.Tech in Electronics and Communication (2020-2024)</li>
-        <li>CGPA: 8.54/10.00</li>
-      </ul>
+      <div className="space-y-4">
+        <div className="tech-card">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white">Indian Institute of Information Technology, Surat</h4>
+              <p className="text-blue-400 font-medium">B.Tech in Electronics and Communication</p>
+              <p className="text-gray-400 text-sm">2020 - 2024</p>
+              <p className="text-cyan-400 font-mono mt-1">CGPA: 8.54/10.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
     ),
   },
   {
     title: "Certifications",
     id: "certifications",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Full stack web developement (Udemy)</li>
-        <li>Prompt Engineering (www.deeplearning.ai)</li>
-      </ul>
+      <div className="space-y-3">
+        {[
+          { name: "Full Stack Web Development", provider: "Udemy" },
+          { name: "Prompt Engineering", provider: "deeplearning.ai" }
+        ].map((cert, idx) => (
+          <div key={idx} className="tech-card flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center flex-shrink-0">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-white font-medium">{cert.name}</p>
+              <p className="text-gray-400 text-sm">{cert.provider}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     ),
   },
 ];
@@ -85,45 +144,54 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base lg:text-lg">
-            I am a Senior Engineer at Marsh McLennan with expertise in full-stack development
-            and AI-powered solutions. I specialize in building scalable applications using
-            React, FastAPI, Django, and Golang. My experience includes developing RAG algorithms,
-            LangChain agents, microservices architecture, and enterprise-level platforms.
-            Previously at Chat360, I engineered AI chatbots, voice bots, and marketing automation
-            systems serving 100,000+ daily users. I'm passionate about competitive programming
-            with a LeetCode Knight title (top 5.2%) and Codeforces Specialist rating.
-          </p>
-          <div className="flex flex-row justify-start mt-8">
-            <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
-              {" "}
-              Skills{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              {" "}
-              Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              {" "}
-              Certifications{" "}
-            </TabButton>
+    <section className="text-white py-16" id="about">
+      <div className="container mx-auto">
+        <h2 className="text-center text-4xl font-bold mb-12">
+          <span className="text-gradient">About Me</span>
+        </h2>
+
+        <div className="md:grid md:grid-cols-2 gap-12 items-start">
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+            <div className="relative">
+              <Image
+                src="/images/about-image.png"
+                width={500}
+                height={500}
+                alt="About"
+                className="rounded-2xl border-2 border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.2)]"
+              />
+            </div>
           </div>
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
+
+          <div className="mt-8 md:mt-0">
+            <p className="text-gray-300 text-base lg:text-lg leading-relaxed mb-6">
+              I am a <span className="text-blue-400 font-semibold">Senior Engineer</span> at Marsh McLennan with expertise in <span className="text-cyan-400">full-stack development</span> and <span className="text-cyan-400">AI-powered solutions</span>.
+              I specialize in building scalable applications using React, FastAPI, Django, and Golang.
+            </p>
+            <p className="text-gray-300 text-base lg:text-lg leading-relaxed mb-6">
+              My experience includes developing <code>RAG algorithms</code>, <code>LangChain agents</code>, microservices architecture, and enterprise-level platforms.
+              Previously at Chat360, I engineered AI chatbots, voice bots, and marketing automation systems serving <span className="text-green-400 font-semibold">100,000+ daily users</span>.
+            </p>
+            <p className="text-gray-300 text-base lg:text-lg leading-relaxed mb-8">
+              I'm passionate about competitive programming with a <span className="text-yellow-400 font-semibold">LeetCode Knight</span> title (top 5.2%) and <span className="text-yellow-400 font-semibold">Codeforces Specialist</span> rating.
+            </p>
+
+            <div className="flex flex-wrap gap-3 mb-8">
+              {TAB_DATA.map((item) => (
+                <TabButton
+                  key={item.id}
+                  selectTab={() => handleTabChange(item.id)}
+                  active={tab === item.id}
+                >
+                  {item.title}
+                </TabButton>
+              ))}
+            </div>
+
+            <div className="min-h-[300px]">
+              {TAB_DATA.find((t) => t.id === tab).content}
+            </div>
           </div>
         </div>
       </div>
