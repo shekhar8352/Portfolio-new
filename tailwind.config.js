@@ -2,9 +2,7 @@
 const colors = require("tailwindcss/colors");
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -41,7 +39,7 @@ module.exports = {
           900: '#134e4a',
         },
         accent: {
-          cyan: '#0891b2',   // Cyan 600 (Darker/Richer)
+          cyan: '#0891b2',   // Cyan 600
           blue: '#2563eb',   // Blue 600
           purple: '#7c3aed', // Violet 600
           amber: '#d97706',  // Amber 600
@@ -58,8 +56,8 @@ module.exports = {
           '50%': { transform: 'translateY(-10px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px rgba(59, 130, 246, 0.5)' },
-          '100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.8)' },
+          '0%': { boxShadow: '0 0 5px rgba(99, 102, 241, 0.5)' },
+          '100%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.8)' },
         },
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
@@ -68,5 +66,15 @@ module.exports = {
       },
     },
   },
+  safelist: [
+    'from-primary-500',
+    'to-secondary-500',
+    'from-accent-purple',
+    'to-accent-blue',
+    'text-primary-400',
+    'text-secondary-400',
+    'bg-primary-500',
+    'bg-secondary-500',
+  ],
   plugins: [],
 };

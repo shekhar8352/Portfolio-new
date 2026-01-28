@@ -9,7 +9,8 @@
   }
 
   body {
-    @apply bg-background text-gray-100;
+    background-color: #0f172a; /* Explicit slate-950 hex */
+    color: #f3f4f6; /* gray-100 */
     background-image:
       radial-gradient(
         circle at 15% 50%,
