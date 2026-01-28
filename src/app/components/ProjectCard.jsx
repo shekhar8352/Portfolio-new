@@ -1,42 +1,50 @@
 import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
   return (
-    <div className="group relative">
+    <motion.div
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.3 }}
+      className="group relative"
+    >
       {/* Glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
 
       {/* Card */}
-      <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300 h-full flex flex-col">
+      <div className="relative bg-[#111625] border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-colors duration-300 h-full flex flex-col">
         {/* Image */}
         <div
           className="h-52 md:h-64 relative group/image overflow-hidden"
-          style={{ background: `url(${imgUrl})`, backgroundSize: "cover", backgroundPosition: "center" }}
         >
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent opacity-60 group-hover/image:opacity-90 transition-opacity duration-300"></div>
+          <div
+             className="absolute inset-0 transition-transform duration-500 group-hover/image:scale-110"
+             style={{ background: `url(${imgUrl})`, backgroundSize: "cover", backgroundPosition: "center" }}
+          />
 
-          {/* Action buttons */}
-          <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover/image:opacity-100 transition-all duration-300 transform translate-y-4 group-hover/image:translate-y-0">
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-slate-900/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
             <Link
               href={gitUrl}
-              className="w-12 h-12 rounded-full bg-slate-800/90 border-2 border-blue-500/50 hover:border-blue-400 hover:bg-blue-500/20 flex items-center justify-center transition-all duration-300 hover:scale-110"
+              className="w-12 h-12 rounded-full border-2 border-slate-400 hover:border-white text-slate-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 bg-slate-900/50 backdrop-blur-sm"
+              target="_blank"
             >
-              <CodeBracketIcon className="w-6 h-6 text-blue-400" />
+              <CodeBracketIcon className="w-6 h-6" />
             </Link>
             <Link
               href={previewUrl}
-              className="w-12 h-12 rounded-full bg-slate-800/90 border-2 border-cyan-500/50 hover:border-cyan-400 hover:bg-cyan-500/20 flex items-center justify-center transition-all duration-300 hover:scale-110"
+              className="w-12 h-12 rounded-full border-2 border-slate-400 hover:border-white text-slate-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 bg-slate-900/50 backdrop-blur-sm"
+              target="_blank"
             >
-              <EyeIcon className="w-6 h-6 text-cyan-400" />
+              <EyeIcon className="w-6 h-6" />
             </Link>
           </div>
         </div>
 
         {/* Content */}
-        <div className="p-6 flex-1 flex flex-col">
+        <div className="p-6 flex-1 flex flex-col pt-8">
           <h5 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
             {title}
           </h5>
@@ -45,7 +53,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

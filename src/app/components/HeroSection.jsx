@@ -29,13 +29,7 @@ const HeroSection = () => {
               sequence={[
                 "Sudhanshu",
                 1000,
-                "Senior Engineer",
-                1000,
-                "Full Stack Developer",
-                1000,
-                "AI Engineer",
-                1000,
-                "Competitive Programmer",
+                "Software Engineer",
                 1000,
               ]}
               wrapper="span"
@@ -46,7 +40,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-gray-300 text-base sm:text-lg mb-6 lg:text-xl max-w-2xl">
-            <span className="text-blue-400 font-semibold">Senior Engineer</span> at Marsh McLennan |
+            <span className="text-blue-400 font-semibold">Software Engineer</span> at Marsh McLennan |
             Full Stack Developer specializing in{" "}
             <code className="text-cyan-400">React</code>,{" "}
             <code className="text-cyan-400">FastAPI</code>, and{" "}
@@ -101,7 +95,7 @@ const HeroSection = () => {
             {/* Animated glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
 
-            <div className="relative rounded-full bg-gradient-to-br from-slate-800 to-slate-900 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] border-2 border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.3)] overflow-hidden">
+            <div className="relative rounded-full bg-gradient-to-br from-slate-800 to-slate-900 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] border-2 border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.3)] overflow-hidden animate-float">
               <Image
                 src="/images/hero2-image.png"
                 alt="hero image"

@@ -18,20 +18,16 @@ const EmailSection = () => {
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
 
-    // Form the request for sending data to the server.
     const options = {
-      // The method is POST because we are sending data.
       method: "POST",
-      // Tell the server we're sending JSON.
       headers: {
         "Content-Type": "application/json",
       },
-      // Body of the request is the JSON data we created above.
       body: JSONdata,
     };
 
     const response = await fetch(endpoint, options);
-    const resData = await response.json();
+    // const resData = await response.json();
 
     if (response.status === 200) {
       console.log("Message sent.");
@@ -44,10 +40,10 @@ const EmailSection = () => {
       id="contact"
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
     >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
+      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] -z-10"></div>
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">
-          Let`&apos;s Connect
+          Let&apos;s Connect
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {" "}
@@ -55,23 +51,23 @@ const EmailSection = () => {
           open. Whether you have a question or just want to say hi, I&apos;ll
           try my best to get back to you!
         </p>
-        <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com/shekhar8352">
-            <Image src={GithubIcon} alt="Github Icon" />
+        <div className="socials flex flex-row gap-4">
+          <Link href="https://github.com/shekhar8352" className="hover:scale-110 transition-transform bg-white/10 p-2 rounded-full hover:bg-white/20">
+            <Image src={GithubIcon} alt="Github Icon" className="w-8 h-8" />
           </Link>
-          <Link href="https://www.linkedin.com/in/sudhanshu-shekhar-631683204/">
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
+          <Link href="https://www.linkedin.com/in/sudhanshu-shekhar-631683204/" className="hover:scale-110 transition-transform bg-white/10 p-2 rounded-full hover:bg-white/20">
+            <Image src={LinkedinIcon} alt="Linkedin Icon" className="w-8 h-8" />
           </Link>
         </div>
       </div>
       <div>
         {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
+          <p className="text-green-400 text-sm mt-2 border border-green-500/20 bg-green-500/10 p-4 rounded-lg">
             Email sent successfully!
           </p>
         ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-6">
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+            <div className="mb-2">
               <label
                 htmlFor="email"
                 className="text-white block mb-2 text-sm font-medium"
@@ -83,11 +79,11 @@ const EmailSection = () => {
                 type="email"
                 id="email"
                 required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className="bg-slate-800/50 border border-slate-700 placeholder-slate-400 text-gray-100 text-sm rounded-lg block w-full p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all backdrop-blur-sm"
                 placeholder="jacob@google.com"
               />
             </div>
-            <div className="mb-6">
+            <div className="mb-2">
               <label
                 htmlFor="subject"
                 className="text-white block text-sm mb-2 font-medium"
@@ -99,11 +95,11 @@ const EmailSection = () => {
                 type="text"
                 id="subject"
                 required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className="bg-slate-800/50 border border-slate-700 placeholder-slate-400 text-gray-100 text-sm rounded-lg block w-full p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all backdrop-blur-sm"
                 placeholder="Just saying hi"
               />
             </div>
-            <div className="mb-6">
+            <div className="mb-2">
               <label
                 htmlFor="message"
                 className="text-white block text-sm mb-2 font-medium"
@@ -113,13 +109,13 @@ const EmailSection = () => {
               <textarea
                 name="message"
                 id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className="bg-slate-800/50 border border-slate-700 placeholder-slate-400 text-gray-100 text-sm rounded-lg block w-full p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all backdrop-blur-sm min-h-[150px]"
                 placeholder="Let's talk about..."
               />
             </div>
             <button
               type="submit"
-              className="bg-yellow-500 hover:bg-orange-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-medium py-3 px-5 rounded-lg w-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transform hover:-translate-y-1"
             >
               Send Message
             </button>
