@@ -11,16 +11,16 @@ const TAB_DATA = [
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="tech-card group">
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
               <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
-            <h4 className="font-semibold text-blue-400 text-lg">Languages</h4>
+            <h4 className="font-semibold text-primary-400 text-lg">Languages</h4>
           </div>
           <div className="flex flex-wrap gap-2">
             {["Python", "JavaScript", "TypeScript", "Golang", "SQL", "C/C++"].map((skill) => (
-              <span key={skill} className="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-md text-sm font-mono hover:bg-slate-600/50 transition-colors">
+              <span key={skill} className="px-3 py-1 bg-surface/50 text-gray-300 rounded-md text-sm font-mono hover:bg-surface/80 transition-colors">
                 {skill}
               </span>
             ))}
@@ -38,7 +38,7 @@ const TAB_DATA = [
           </div>
           <div className="flex flex-wrap gap-2">
             {["Node.js", "Express.js", "FastAPI", "Django", "PostgreSQL", "MongoDB", "Redis"].map((skill) => (
-              <span key={skill} className="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-md text-sm font-mono hover:bg-slate-600/50 transition-colors">
+              <span key={skill} className="px-3 py-1 bg-surface/50 text-gray-300 rounded-md text-sm font-mono hover:bg-surface/80 transition-colors">
                 {skill}
               </span>
             ))}
@@ -56,7 +56,7 @@ const TAB_DATA = [
           </div>
           <div className="flex flex-wrap gap-2">
             {["React.js", "Next.js", "Angular.js", "Tailwind CSS"].map((skill) => (
-              <span key={skill} className="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-md text-sm font-mono hover:bg-slate-600/50 transition-colors">
+              <span key={skill} className="px-3 py-1 bg-surface/50 text-gray-300 rounded-md text-sm font-mono hover:bg-surface/80 transition-colors">
                 {skill}
               </span>
             ))}
@@ -74,7 +74,7 @@ const TAB_DATA = [
           </div>
           <div className="flex flex-wrap gap-2">
             {["Docker", "AWS", "Nginx", "Caddy", "LangChain", "Pinecone", "OpenAI", "RAG", "RabbitMQ", "Kafka"].map((skill) => (
-              <span key={skill} className="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-md text-sm font-mono hover:bg-slate-600/50 transition-colors">
+              <span key={skill} className="px-3 py-1 bg-surface/50 text-gray-300 rounded-md text-sm font-mono hover:bg-surface/80 transition-colors">
                 {skill}
               </span>
             ))}
@@ -233,12 +233,12 @@ const AboutSection = () => {
             className="tech-card p-8 mb-8"
           >
             <p className="text-gray-300 text-lg leading-relaxed mb-4">
-              I am a <span className="text-blue-400 font-semibold">Senior Engineer</span> at Marsh McLennan with expertise in <span className="text-cyan-400">full-stack development</span> and <span className="text-cyan-400">AI-powered solutions</span>.
+              I am a <span className="text-primary-400 font-semibold">Senior Engineer</span> at Marsh McLennan with expertise in <span className="text-secondary-400">full-stack development</span> and <span className="text-secondary-400">AI-powered solutions</span>.
               I specialize in building scalable applications using <code>React</code>, <code>FastAPI</code>, <code>Django</code>, and <code>Golang</code>.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mb-4">
               My experience includes developing <code>RAG algorithms</code>, <code>LangChain agents</code>, microservices architecture, and enterprise-level platforms.
-              Previously at Chat360, I engineered AI chatbots, voice bots, and marketing automation systems serving <span className="text-green-400 font-semibold">100,000+ daily users</span>.
+              Previously at Chat360, I engineered AI chatbots, voice bots, and marketing automation systems serving <span className="text-secondary-400 font-semibold">100,000+ daily users</span>.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed">
               I&apos;m passionate about competitive programming with a <span className="text-yellow-400 font-semibold">LeetCode Knight</span> title (top 5.2%) and <span className="text-yellow-400 font-semibold">Codeforces Specialist</span> rating.

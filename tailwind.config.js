@@ -14,23 +14,37 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        background: '#0f172a', // Slate 950
+        surface: '#1e293b',    // Slate 800
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1', // Indigo 500
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
+        },
+        secondary: {
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6', // Teal 500
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
         },
         accent: {
-          cyan: '#06b6d4',
-          blue: '#3b82f6',
-          purple: '#8b5cf6',
-          green: '#10b981',
+          cyan: '#0891b2',   // Cyan 600 (Darker/Richer)
+          blue: '#2563eb',   // Blue 600
+          purple: '#7c3aed', // Violet 600
+          amber: '#d97706',  // Amber 600
         },
       },
       animation: {

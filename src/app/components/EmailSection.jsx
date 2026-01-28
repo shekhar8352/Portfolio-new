@@ -40,7 +40,7 @@ const EmailSection = () => {
       id="contact"
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
     >
-      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] -z-10"></div>
+      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-500/20 rounded-full blur-[100px] -z-10"></div>
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
@@ -79,7 +79,7 @@ const EmailSection = () => {
                 type="email"
                 id="email"
                 required
-                className="bg-slate-800/50 border border-slate-700 placeholder-slate-400 text-gray-100 text-sm rounded-lg block w-full p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all backdrop-blur-sm"
+                className="bg-surface/50 border border-white/10 placeholder-slate-400 text-gray-100 text-sm rounded-lg block w-full p-3 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all backdrop-blur-sm"
                 placeholder="jacob@google.com"
               />
             </div>
@@ -95,7 +95,7 @@ const EmailSection = () => {
                 type="text"
                 id="subject"
                 required
-                className="bg-slate-800/50 border border-slate-700 placeholder-slate-400 text-gray-100 text-sm rounded-lg block w-full p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all backdrop-blur-sm"
+                className="bg-surface/50 border border-white/10 placeholder-slate-400 text-gray-100 text-sm rounded-lg block w-full p-3 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all backdrop-blur-sm"
                 placeholder="Just saying hi"
               />
             </div>
@@ -109,13 +109,13 @@ const EmailSection = () => {
               <textarea
                 name="message"
                 id="message"
-                className="bg-slate-800/50 border border-slate-700 placeholder-slate-400 text-gray-100 text-sm rounded-lg block w-full p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all backdrop-blur-sm min-h-[150px]"
+                className="bg-surface/50 border border-white/10 placeholder-slate-400 text-gray-100 text-sm rounded-lg block w-full p-3 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all backdrop-blur-sm min-h-[150px]"
                 placeholder="Let's talk about..."
               />
             </div>
             <button
               type="submit"
-              className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-medium py-3 px-5 rounded-lg w-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transform hover:-translate-y-1"
+              className="bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white font-medium py-3 px-5 rounded-lg w-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] transform hover:-translate-y-1"
             >
               Send Message
             </button>

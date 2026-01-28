@@ -9,16 +9,16 @@
   }
 
   body {
-    @apply bg-[#0a0e1a] text-gray-100;
+    @apply bg-background text-gray-100;
     background-image:
       radial-gradient(
         circle at 15% 50%,
-        rgba(56, 189, 248, 0.08) 0%,
+        rgba(99, 102, 241, 0.08) 0%, /* Indigo-500 optimized opacity */
         transparent 25%
       ),
       radial-gradient(
         circle at 85% 30%,
-        rgba(139, 92, 246, 0.08) 0%,
+        rgba(20, 184, 166, 0.08) 0%, /* Teal-500 optimized opacity */
         transparent 25%
       );
   }
@@ -26,24 +26,24 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 animate-gradient;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-secondary-400 to-primary-500 animate-gradient;
     background-size: 200% 200%;
   }
 
   .card-gradient {
-    @apply bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-md;
+    @apply bg-gradient-to-br from-surface/80 to-background/80 backdrop-blur-md;
   }
 
   .glow-border {
-    @apply border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.15)];
+    @apply border border-primary-500/20 shadow-[0_0_15px_rgba(99,102,241,0.15)];
   }
 
   .tech-card {
-    @apply bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-md border border-slate-700/50 rounded-xl p-4 hover:border-blue-500/50 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.25)] hover:-translate-y-1;
+    @apply bg-gradient-to-br from-surface/60 to-background/60 backdrop-blur-md border border-white/5 rounded-xl p-4 hover:border-primary-500/50 transition-all duration-300 hover:shadow-[0_0_25px_rgba(99,102,241,0.25)] hover:-translate-y-1;
   }
 
   .glass-nav {
-    @apply bg-[#0a0e1a]/70 backdrop-blur-xl border-b border-white/5;
+    @apply bg-background/80 backdrop-blur-xl border-b border-white/5;
   }
 }
 

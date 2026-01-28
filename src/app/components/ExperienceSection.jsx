@@ -9,7 +9,7 @@ const experienceData = [
         role: "Senior Engineer – Application Development",
         duration: "May 2025 – Present",
         location: "Pune, Maharashtra",
-        color: "from-blue-500 to-cyan-500",
+        color: "from-primary-500 to-secondary-500",
         highlights: [
             "Working on a global sourcing and procurement platform for the Marsh McLennan Global Procurement team",
             "Developed a comprehensive Supplier Management module using ReactJS and FastAPI",
@@ -23,7 +23,7 @@ const experienceData = [
         role: "Software Engineer",
         duration: "June 2024 - April 2025",
         location: "Pune, Maharashtra",
-        color: "from-purple-500 to-pink-500",
+        color: "from-accent-purple to-accent-blue", // Keeping purple/blue as accent
         highlights: [
             "Engineered RAG algorithms, LangChain agents, and Agentic AI using OpenAI, LangChain, Pinecone, and AWS Boto, resulting in a 30% reduction in response time",
             "Designed a bulk email system using Django, Redis, PostgreSQL, RabbitMQ, Celery, and SparkPost, enabling over 100,000 emails per day with 99.9% reliability",
@@ -49,7 +49,7 @@ const ExperienceSection = () => {
                     {/* Timeline */}
                     <div className="relative">
                         {/* Timeline line */}
-                        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 opacity-30"></div>
+                        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary-500 via-secondary-500 to-primary-500 opacity-30"></div>
 
                         <div className="space-y-12">
                             {experienceData.map((exp, index) => (
@@ -71,7 +71,7 @@ const ExperienceSection = () => {
                                         <div className={`absolute inset-0 bg-gradient-to-r ${exp.color} rounded-xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
 
                                         {/* Card */}
-                                        <div className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl p-6 hover:border-blue-500/50 transition-all duration-300 shadow-xl">
+                                        <div className="relative bg-surface/60 backdrop-blur-md border border-white/5 rounded-xl p-6 hover:border-primary-500/50 transition-all duration-300 shadow-xl">
                                             {/* Header */}
                                             <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
                                                 <div className="flex-1">
@@ -101,7 +101,7 @@ const ExperienceSection = () => {
                                             <ul className="space-y-3">
                                                 {exp.highlights.map((highlight, idx) => (
                                                     <li key={idx} className="flex items-start gap-3 text-gray-300 text-sm md:text-base leading-relaxed">
-                                                        <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <svg className="w-5 h-5 text-secondary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                         </svg>
                                                         <span>{highlight}</span>

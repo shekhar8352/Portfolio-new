@@ -60,10 +60,10 @@ const Navbar = () => {
             href={"/"}
             className="group flex items-center gap-2 relative z-50"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white font-bold text-lg">
               S
             </div>
-            <span className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors hidden sm:block">
+            <span className="text-xl font-bold text-white group-hover:text-primary-400 transition-colors hidden sm:block">
               Sudhanshu
             </span>
           </Link>
@@ -77,14 +77,14 @@ const Navbar = () => {
                 className="px-4 py-2 text-gray-300 hover:text-white font-medium rounded-lg hover:bg-white/5 transition-all duration-300 relative group"
               >
                 {link.title}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 group-hover:w-1/2 transition-all duration-300 opacity-0 group-hover:opacity-100"></span>
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 group-hover:w-1/2 transition-all duration-300 opacity-0 group-hover:opacity-100"></span>
               </Link>
             ))}
 
             {/* CTA Button */}
             <Link
               href="#contact"
-              className="ml-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300 hover:scale-105 border border-white/10"
+              className="ml-4 px-6 py-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold rounded-lg hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-300 hover:scale-105 border border-white/10"
             >
               Hire Me
             </Link>
